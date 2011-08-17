@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="utf-8">
+    <title>ToggleMenu test page</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js"></script>
+    
+    <script src="jquery.togglemenu.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#menu-one').toggleMenu({
+          opener: $('#menu-one-opener')
+        });
+        $('#menu-two').toggleMenu({
+          opener: $('#menu-two-opener'),
+          transition: 'fold',
+          duration: 'slow',
+          onClick: function() { alert('menu two clicked'); },
+          onClickFilter: '#menu-two li a'
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <h1>ToggleMenu test page</h1>
+    </header>
+    
+    <div>
+      <a href="#" id="menu-one-opener">Menu 1</a>
+      <div id="menu-one" style="display:none">
+        <ul>
+          <li class="menu_item">
+            <a href="#">Menu Item 1</a>
+          </li>
+          <li class="menu_item">
+            <a href="#">Menu Item 2</a>
+          </li>
+          <li class="menu_item">
+            <a href="#">Menu Item 2</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div>
+      <a href="#" id="menu-two-opener">Menu 2</a>
+      <div id="menu-two" style="display:none">
+        <ul>
+          <li class="menu_item">
+            <a href="#">Menu Item 4</a>
+          </li>
+          <li class="menu_item">
+            <a href="#">Menu Item 5</a>
+          </li>
+          <li class="menu_item">
+            <a href="#">Menu Item 6</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
