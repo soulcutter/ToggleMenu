@@ -56,7 +56,12 @@
         }
 
         var performToggle = function() {
-            $element.toggle(plugin.settings.duration, plugin.settings.transition);
+            if($.ui) {
+              // jQuery UI has a different order of arguments for toggle
+              $element.toggle(plugin.settings.transition, plugin.settings.duration);
+            } else {
+              $element.toggle(plugin.settings.duration, plugin.settings.transition);
+            }
         }
 
         plugin.init();
