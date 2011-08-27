@@ -22,6 +22,21 @@
         });
       });
     </script>
+    
+    <style type="text/css">
+      ul.menu {
+        list-style: none;
+        display: none;
+        padding: 5px;
+        position: absolute;
+        width: 100px;
+        border: 1px solid;
+        margin-top: 5px;
+      }
+      .menu-holder {
+        display: inline-block;
+      }
+    </style>
   </head>
 
   <body>
@@ -29,38 +44,34 @@
       <h1>ToggleMenu test page</h1>
     </header>
     
-    <div>
+    <div class="menu-holder">
       <a href="#" id="menu-one-opener">Menu 1</a>
-      <div id="menu-one" style="display:none">
-        <ul>
-          <li class="menu_item">
-            <a href="#">Menu Item 1</a>
-          </li>
-          <li class="menu_item">
-            <a href="#">Menu Item 2</a>
-          </li>
-          <li class="menu_item">
-            <a href="#">Menu Item 2</a>
-          </li>
-        </ul>
-      </div>
+      <ul id="menu-one" class="menu">
+        <li class="menu_item">
+          <a href="#">Menu 1 Item 1</a>
+        </li>
+        <li class="menu_item">
+          <a href="#">Menu 1 Item 2</a>
+        </li>
+        <li class="menu_item">
+          <a href="#">Menu 1 Item 3</a>
+        </li>
+      </ul>
     </div>
     
-    <div>
+    <div class="menu-holder">
       <a href="#" id="menu-two-opener">Menu 2</a>
-      <div id="menu-two" style="display:none">
-        <ul>
-          <li class="menu_item">
-            <a href="#">Menu Item 4</a>
-          </li>
-          <li class="menu_item">
-            <a href="#">Menu Item 5</a>
-          </li>
-          <li class="menu_item">
-            <a href="#">Menu Item 6</a>
-          </li>
-        </ul>
-      </div>
+      <ul id="menu-two" class="menu">
+        <li class="menu_item">
+          <a href="#">Menu 2 Item 1</a>
+        </li>
+        <li class="menu_item">
+          <a href="#">Menu 2 Item 2</a>
+        </li>
+        <li class="menu_item">
+          <a href="#">Menu 2 Item 3</a>
+        </li>
+      </ul>
     </div>
   </body>
 </html>
