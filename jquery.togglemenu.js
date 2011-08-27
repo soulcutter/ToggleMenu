@@ -29,7 +29,15 @@
             $element.bind("click.toggleMenu", function(e) {
                 var $clickSource = $(e.target);
                 if($clickSource.is(plugin.settings.onClickFilter)) {
-                    return plugin.settings.onClick(e, $clickSource);
+                    var retVal = plugin.settings.onClick(e, $clickSource);
+
+                    // default behavior with no return value from onClick
+                    if(retVal == undefined) {
+                      retVal = false; // doesn't let the event propagate
+                      plugin.closeMenu();
+                    }
+
+                    return retVal;
                 }
             });
             if(plugin.settings.opener != null) {
