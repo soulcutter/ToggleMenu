@@ -1,5 +1,6 @@
 (function($){
     $.toggleMenu = function(element, options) {
+        var version = "0.1";
         var defaults = {
             duration: 'fast',
             transition: null, // if 'transition' is specified, it will try to use that in the toggle
@@ -71,6 +72,8 @@
               $element.toggle(plugin.settings.duration, plugin.settings.transition);
             }
         }
+        
+        plugin.version = version;
 
         plugin.init();
     }

@@ -4,10 +4,17 @@ describe("ToggleMenu", function() {
 
   beforeEach(function() {
     loadFixtures('test.html');
+    
+    // Here are two examples of using toggleMenu
+    ////
+    
+    // This menu does nothing but open and close
     $menuOne = $('#menu-one');
     $menuOne.toggleMenu({
       opener: $('#menu-one-opener')
     });
+    
+    // This shows the available options you can supply to toggleMenu
     $menuTwo = $('#menu-two');
     $menuTwo.toggleMenu({
       opener: $('#menu-two-opener'),
@@ -16,6 +23,10 @@ describe("ToggleMenu", function() {
       onClick: function() { alert('menu two clicked'); },
       onClickFilter: '#menu-two li a'
     });
+  });
+  
+  it("should have a version string", function() {
+    expect($menuOne.data('toggleMenu').version).toBeDefined();
   });
 
   describe("when an opener is clicked", function() {
@@ -55,13 +66,18 @@ describe("ToggleMenu", function() {
         expect($menuTwo).toBeVisible();
       });
     });
+    
+    describe("and then a menu item is clicked", function() {
+      beforeEach(function() {
+        var $menuItem = $('li a:first', $menuOne);
+        spyOn($menuOne.data('toggleMenu').settings, 'onClick');
+        
+        $menuItem.trigger('click.toggleMenu', [{target: $menuItem}]);
+      });
+      
+      it("should call the configured onClick method", function() {
+        expect($menuOne.data('toggleMenu').settings.onClick).wasCalled();
+      });
+    });
   });
-  // it("tells the current song if the user has made it a favorite", function() {
-  //   spyOn(song, 'persistFavoriteStatus');
-  // 
-  //   player.play(song);
-  //   player.makeFavorite();
-  // 
-  //   expect(song.persistFavoriteStatus).toHaveBeenCalledWith(true);
-  // });
 });
