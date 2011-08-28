@@ -77,9 +77,10 @@
 
     $.fn.toggleMenu = function(options) {
         return this.each(function() {
-            if (undefined == $(this).data('toggleMenu')) {
-                var plugin = new $.toggleMenu(this, options);
-                $(this).data('toggleMenu', plugin);
+            var $this = $(this);
+            if (undefined == $this.data('toggleMenu')) {
+                var plugin = new $.toggleMenu($this, options);
+                $this.data('toggleMenu', plugin);
             }
         });
     }
