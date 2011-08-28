@@ -1,6 +1,7 @@
 toggleMenu plugin for jQuery
 ============================
 
+
 toggleMenu is a simple menu system which uses [jQuery][0]'s
 [toggle()](http://api.jquery.com/toggle/) or [jQuery UI][1]'s
 [toggle()](http://jqueryui.com/demos/toggle/) methods to open and close the
@@ -28,6 +29,10 @@ toggleMenu may take a hash argument to supply the following options:
     clicking on an element within the menu.
   * `onClickFilter` (*default:* none): A jQuery selector string to use so that
     only matching elements trigger an onClick event.
+
+Homepage and Demo
+-----------------
+[http://soulcutter.github.com/ToggleMenu/](http://soulcutter.github.com/ToggleMenu/)
 
 [0]: http://jquery.com/
 [1]: http://jqueryui.com/
