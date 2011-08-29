@@ -28,6 +28,13 @@ describe("ToggleMenu", function() {
   it("should have a version string", function() {
     expect($menuOne.data('toggleMenu').version).toBeDefined();
   });
+  
+  describe("in the initialization options", function() {
+    it("should treat a string opener option as a jQuery selector", function() {
+      $('#menu-three').toggleMenu({ opener: 'h1'});
+      expect($('#menu-three').data('toggleMenu').settings.opener).toBe('h1');
+    });
+  });
 
   describe("when an opener is clicked", function() {
     beforeEach(function() {

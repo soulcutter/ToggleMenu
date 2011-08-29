@@ -18,6 +18,7 @@
 
         plugin.init = function() {
             plugin.settings = $.extend({}, defaults, options);
+            plugin.settings.opener = normalize(plugin.settings.opener);
 
             $(window).bind("openMenu.toggleMenu", function(e, $openMenu) {
                 if($openMenu != $element) {
@@ -71,6 +72,13 @@
             } else {
               $element.toggle(plugin.settings.duration, plugin.settings.transition);
             }
+        }
+        
+        var normalize = function(selector) {
+          if(selector instanceof jQuery || selector == null) {
+            return selector;
+          } 
+          return $(selector.toString());
         }
         
         plugin.version = version;
