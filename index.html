@@ -17,20 +17,23 @@
       width: 700px;
     }
     h1 { font-size: 3.8em; color: #027ae9; margin-bottom: 3px; }
-    h1 .attribution { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #027ae9; }
-    h3 { text-align: center; color: #027ae9; }
+    h1 a { text-decoration: none; }
+    h2 { font-size: 1.5em; color: #027ae9; text-decoration: underline; }
+    h2.attribution { font-size: 0.4em; text-decoration: none;}
+    h2 a { text-decoration: none; }
+    h3 { color: #027ae9; }
     a { color: #027ae9; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 15px; font-style: italic;}
+    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 15px;}
     .download { float: right; }
     pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
+    hr { border: 0; width: 100%; border-bottom: 1px solid #aaa}
     .download img {
       border: 0;
       width: 90px;
     }
+    dl { margin-left: 20px;}
+    dd { padding-bottom: 15px; }
+    footer { text-align: right; }
   </style>
 </head>
 
@@ -46,18 +49,64 @@
     </div>
 
     <header>
-      <h1><a href="http://github.com/soulcutter/ToggleMenu">ToggleMenu v0.1</a></h1>
+      <h1>
+        <a href="http://github.com/soulcutter/ToggleMenu">toggleMenu v0.1</a>
+        <span class="g-plusone" data-size="medium" data-annotation="none"></span>
+      </h1>
       <h2 class="attribution">by <a href="http://github.com/soulcutter">soulcutter</a></h2>
     </header>
 
+    <hr/>
+
     <div class="description">
-      A toggle-based jQuery plugin for menus
+      A simple menu system which uses <a href="http://jquery.com/">jQuery</a>'s
+      <a href="http://api.jquery.com/toggle/">toggle()</a> or
+      <a href="http://jqueryui.com/">jQuery UI</a>'s
+      <a href="http://jqueryui.com/demos/toggle/">toggle()</a> methods to open
+      and close the menu. The default behavior is that clicking outside of the
+      menu results in the menu closing, and only one menu can be open at a time.
     </div>
 
-    <h2>Dependencies</h2>
-    <ul class="dependencies">
-      <li>jQuery</li>
-    </ul>
+    <h2>Documentation</h2>
+
+    <h3>Available Options</h3>
+
+    <p>toggleMenu may take a hash argument to supply the following options:
+      <dl>
+        <dt><code>opener</code> (<b>recommended</b>):</dt>
+        <dd>
+          A jQuery element intended to be clicked on in order to display the
+          menu.
+        </dd>
+        <dt><code>transition</code> (<i>default:</i> <code>'linear'</code>):</dt>
+        <dd>
+          A string,
+          <a href="http://jqueryui.com/demos/toggle/">the name of an effect</a>.
+        </dd>
+        <dt><code>duration</code> (<i>default:</i> <code>'fast'</code>):</dt>
+        <dd>
+          A string, <code>'fast'</code> or <code>'slow'</code>, or a number of
+          milliseconds. Defines how long the transition will take.
+        </dd>
+        <dt><code>onClick</code> (<i>default:</i> <code>function() {}</code>):</dt>
+        <dd>
+          A function that is called when the menu is clicked upon. This can be
+          used to give behavior to menu items, though for complex menus it is
+          recommended that you attach click events directly to the menu items
+          themselves.
+        </dd>
+        <dt><code>onClickFilter</code> (<i>default:</i> none):</dt>
+        <dd>
+          A jQuery selector string. Only matching elements will trigger the
+          onClick function.
+        </dd>
+      </dl>
+    
+    <h3>Everything Else</h3>
+    <p>See <a href="http://github.com/soulcutter/ToggleMenu">soulcutter/ToggleMenu</a> on GitHub</p>
+
+    <h2>Demo</h2>
+    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/soulcutter/DvVb2/embedded/"></iframe>
 
     <h2>Download</h2>
     <p>
@@ -71,27 +120,13 @@
     </p>
     <pre>$ git clone git://github.com/soulcutter/ToggleMenu</pre>
 
-    <h2>Documentation</h2>
-    <p>See <a href="https://github.com/soulcutter/ToggleMenu#readme">the README on GitHub</a></p>
-
-    <h2>Demo</h2>
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/soulcutter/DvVb2/embedded/"></iframe>
-
-    <h2>License</h2>
-    <p>Copyright (c) 2011 Bradley Schaefer</p>
-    <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
-    <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
-    <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
-
-    <h2>Authors</h2>
-    <p>Bradley Schaefer (bradley@anythingsocial.com)</p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/soulcutter/ToggleMenu">soulcutter/ToggleMenu</a>
-    </div>
-
-    <div class="g-plusone"></div>
   </div>
+  
+  <footer>
+    <a href="http://www.w3.org/html/logo/">
+      <img src="http://www.w3.org/html/logo/badge/html5-badge-h-solo.png" width="63" height="64" alt="HTML5 Powered" title="HTML5 Powered">
+    </a>
+  </footer>
   
   <script type="text/javascript">
     (function() {
